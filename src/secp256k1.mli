@@ -144,5 +144,5 @@ module Sign : sig
   val recover_exn : Context.t -> signature:recoverable t -> msg:msg -> Key.public Key.t
   val recover : Context.t -> signature:recoverable t -> msg:msg -> (Key.public Key.t, string) result
 
-  val normalize : Context.t -> sigout:(_ t) -> sigin:(_ t) -> bool
+  val normalize : Context.t -> plain t -> bool
 end
