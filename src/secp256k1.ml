@@ -466,5 +466,11 @@ module Sign = struct
   let recover ctx ~signature ~msg =
     try Ok (recover_exn ctx ~signature ~msg) with
     | Invalid_argument msg -> Error msg
+
+  external normalize : Context.t -> buffer -> bool =
+    "ecdsa_normalize" [@@noalloc]
+
+  let normalize ctx sign = match sign with
+     | (P s) -> normalize ctx s
 end
 
