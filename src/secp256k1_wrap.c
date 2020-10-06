@@ -227,8 +227,8 @@ CAMLprim value ecdsa_recover(value ctx, value buf, value signature, value msg) {
                                             Caml_ba_data_val(msg)));
 }
 
-CAMLprim value ecdsa_normalize(value ctx, value sigout, value sigin) {
-   return Val_bool(secp256k1_ecdsa_signature_normalize(Caml_ba_data_val(ctx),
-                                                       Caml_ba_data_val(sigout),
-                                                       Caml_ba_data_val(sigin)));
+CAMLprim value ecdsa_normalize(value ctx, value sign) {
+    return Val_bool(secp256k1_ecdsa_signature_normalize(Caml_ba_data_val(ctx),
+                                                       Caml_ba_data_val(sign),
+                                                       Caml_ba_data_val(sign)));
 }
