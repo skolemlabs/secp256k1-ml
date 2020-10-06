@@ -3,6 +3,7 @@
  (public_name secp256k1)
  (libraries bigarray)
  (c_names secp256k1_wrap)
+ (env-vars (RECOVERY yes))
  (c_flags
   (:include c_flags.sexp))
  (c_library_flags
