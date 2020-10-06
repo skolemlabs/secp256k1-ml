@@ -3,7 +3,6 @@
  (public_name secp256k1)
  (libraries bigarray)
  (c_names secp256k1_wrap)
- (env (RECOVERY yes))
  (c_flags
   (:include c_flags.sexp))
  (c_library_flags
@@ -15,3 +14,6 @@
   (:< config/discover.exe))
  (action
   (run %{<})))
+
+(env
+ (_ (env-vars (RECOVERY yes))))
